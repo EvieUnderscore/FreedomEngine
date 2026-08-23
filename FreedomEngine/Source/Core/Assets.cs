@@ -17,9 +17,9 @@ namespace FreedomEngine.Core
 
         public Texture2D Image(String path)
         {
-            if(_textureCache.TryGetValue(path, out Texture2D obj))
+            if(_textureCache.TryGetValue(path, out Texture2D _texture))
             {
-                return obj;
+                return _texture;
             }
 
             using (var stream = TitleContainer.OpenStream($"Content/Images/{path}.png"))
