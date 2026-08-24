@@ -29,7 +29,6 @@ namespace FreedomEngine.Funkin
 
         public override void Update(GameTime gameTime)
         {
-
             base.Update(gameTime);
         }
 
