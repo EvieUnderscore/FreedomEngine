@@ -94,14 +94,14 @@ namespace FreedomEngine.Core
         }
 
         // With how I want the engines systems I dont think manual drawing should be a thing atleast for now
-        /*
-        public void Draw(SpriteBatch spriteBatch)
+        
+        public void Draw()
         {
             try
             {
                 if (_screens.Count > 0)
                 {
-                    _screens.Peek().Draw(spriteBatch);
+                    _screens.Peek().Draw();
                 }
             }
             catch (Exception ex)
@@ -109,7 +109,7 @@ namespace FreedomEngine.Core
 
             }
         }
-        */
+        
         public void Destroy()
         {
             foreach (GameState state in _screens)

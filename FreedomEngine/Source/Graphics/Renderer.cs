@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using FreedomEngine.Objects;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -25,6 +26,15 @@ namespace FreedomEngine.Graphics
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
 
             spriteBatch.Draw(texture, position, Color.White);
+
+            spriteBatch.End();
+        }
+
+        public void DrawSprite2D(Sprite2D sprite)
+        {
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
+
+            spriteBatch.Draw(sprite.texture, sprite.transform.position, sprite.color);
 
             spriteBatch.End();
         }

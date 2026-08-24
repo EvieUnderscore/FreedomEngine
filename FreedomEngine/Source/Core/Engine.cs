@@ -28,7 +28,7 @@ namespace FreedomEngine.Core
             renderer.LoadContent();
             assets = new Assets(graphicsDevice);
 
-            GameStateManager.Instance.AddState(new MainMenuState());
+            GameStateManager.Instance.AddState(new MainMenuState(renderer, assets));
 
             //bgTexture = assets.Image("menus/menuBG");
         }
@@ -43,6 +43,8 @@ namespace FreedomEngine.Core
         public void Draw(GameTime gameTime)
         {
             //TODO: shit
+
+            GameStateManager.Instance.Draw();
 
             //renderer.DrawTexture(bgTexture, new Vector2(0, 0));
         }

@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using FreedomEngine.Objects;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -10,12 +11,13 @@ namespace FreedomEngine.Core
 {
     public interface IGameState
     {
+        List<IGameObject> objects { get; set; }
+
         void Initialize();
         void Update(GameTime gameTime);
+        void Draw();
         void Destroy();
-
-        // Probably will reimplement manual drawing later
-        //void Draw(SpriteBatch spriteBatch);
+        void Add(IGameObject obj);
 
     }
 }

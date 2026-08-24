@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using FreedomEngine.Graphics;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,6 @@ namespace FreedomEngine.Objects
     public interface IGameObject
     {
         void Update(GameTime gameTime);
-        void Draw();
+        void Draw(Renderer renderer);
     }
 }

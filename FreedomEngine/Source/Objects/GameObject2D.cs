@@ -6,26 +6,24 @@ using System.Text;
 using System.Threading.Tasks;
 
 using FreedomEngine.Math;
+using FreedomEngine.Graphics;
 
 namespace FreedomEngine.Objects
 {
-    internal class GameObject2D : IGameObject
+    public class GameObject2D : IGameObject
     {
-        public Transform2D transform;
+        public Transform2D transform = new Transform2D();
 
-        public GameObject2D(Transform2D transform)
+        public GameObject2D(Transform2D transform = null)
         {
-            this.transform = transform;
+            if (transform != null)
+            {
+                this.transform = transform;
+            }
         }
 
-        public void Update(GameTime gameTime)
-        {
-            throw new NotImplementedException();
-        }
+        public void Update(GameTime gameTime) {}
 
-        public void Draw()
-        {
-            throw new NotImplementedException();
-        }
+        public virtual void Draw(Renderer renderer) {}
     }
 }
