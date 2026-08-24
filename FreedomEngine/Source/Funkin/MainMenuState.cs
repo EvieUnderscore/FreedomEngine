@@ -22,25 +22,25 @@ namespace FreedomEngine.Funkin
             bg.LoadTexture(assets.Image("menus/menuBG"));
             bg.transform.position.X = 200;
             Add(bg);
+
+            base.Initialize();
         }
 
 
         public override void Update(GameTime gameTime)
         {
-            bg.Update(gameTime);
+
+            base.Update(gameTime);
         }
 
         public override void Destroy()
         {
-
+            base.Destroy();
         }
 
         public override void Draw()
         {
-            foreach (IGameObject obj in objects)
-            {
-                obj.Draw(renderer);
-            }
+            base.Draw();
         }
     }
 }

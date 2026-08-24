@@ -24,11 +24,25 @@ namespace FreedomEngine.Core
             this.assets = assets;
         }
 
-        public abstract void Initialize();
-        public abstract void Update(GameTime gameTime);
-        public abstract void Destroy();
+        public virtual void Initialize() { }
+        
+        public virtual void Update(GameTime gameTime)
+        {
+            foreach (IGameObject obj in objects)
+            {
+                obj.Update(gameTime);
+            }
+        }
 
-        public abstract void Draw();
+        public virtual void Destroy() { }
+
+        public virtual void Draw()
+        {
+            foreach (IGameObject obj in objects)
+            {
+                obj.Draw(renderer);
+            }
+        }
 
         public void Add(IGameObject obj)
         {
