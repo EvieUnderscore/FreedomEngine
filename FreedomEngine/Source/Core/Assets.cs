@@ -15,6 +15,16 @@ namespace FreedomEngine.Core
 
         private readonly Dictionary<string, Texture2D> _textureCache = new Dictionary<string, Texture2D>();
 
+        public Texture2D GetTexture(String path)
+        {
+            using (var stream = TitleContainer.OpenStream($"Content/Images/{path}.png"))
+            {
+                Texture2D texture = Texture2D.FromStream(_graphicsDevice, stream);
+                _textureCache.Add(path, texture);
+                return texture;
+            }
+        }
+
         public Texture2D Image(String path)
         {
             if(_textureCache.TryGetValue(path, out Texture2D _texture))
@@ -22,12 +32,7 @@ namespace FreedomEngine.Core
                 return _texture;
             }
 
-            using (var stream = TitleContainer.OpenStream($"Content/Images/{path}.png"))
-            {
-                Texture2D texture = Texture2D.FromStream(_graphicsDevice, stream);
-                _textureCache.Add(path, texture);
-                return texture;
-            }
+            return GetTexture(path);
         }
     }
 }

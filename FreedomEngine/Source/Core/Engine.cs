@@ -1,4 +1,5 @@
-﻿using FreedomEngine.Graphics;
+﻿using FreedomEngine.Funkin;
+using FreedomEngine.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -27,19 +28,23 @@ namespace FreedomEngine.Core
             renderer.LoadContent();
             assets = new Assets(graphicsDevice);
 
-            bgTexture = assets.Image("menus/menuBG");
+            GameStateManager.Instance.AddState(new MainMenuState());
+
+            //bgTexture = assets.Image("menus/menuBG");
         }
 
         public void Update(GameTime gameTime)
         {
             //TODO: shit
+
+            GameStateManager.Instance.Update(gameTime);
         }
 
         public void Draw(GameTime gameTime)
         {
             //TODO: shit
 
-            renderer.DrawTexture(bgTexture, new Vector2(0, 0));
+            //renderer.DrawTexture(bgTexture, new Vector2(0, 0));
         }
     }
 }

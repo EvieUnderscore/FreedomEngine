@@ -34,7 +34,6 @@
     <Folder Include="Content\Audio\" />
     <Folder Include="Content\Fonts\" />
     <Folder Include="Content\Images\" />
-    <Folder Include="Source\Game\" />
   </ItemGroup>
   <ItemGroup>
 	  <None Update="Content\**\*.*">
