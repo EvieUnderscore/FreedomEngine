@@ -37,7 +37,7 @@ namespace FreedomEngine.Core
         {
             //TODO: shit
 
-            GameStateManager.Instance.Update(gameTime);
+            GameStateManager.Instance.Update((float)gameTime.ElapsedGameTime.TotalMilliseconds);
         }
 
         public void Draw(GameTime gameTime)

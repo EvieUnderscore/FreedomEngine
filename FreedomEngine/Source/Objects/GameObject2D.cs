@@ -23,7 +23,7 @@ namespace FreedomEngine.Objects
             }
         }
 
-        public void Update(GameTime gameTime) {}
+        public void Update(float delta) {}
 
         public virtual void Draw(Renderer renderer) {}
 

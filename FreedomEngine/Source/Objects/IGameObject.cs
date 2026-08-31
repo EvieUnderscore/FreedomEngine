@@ -10,7 +10,7 @@ namespace FreedomEngine.Objects
 {
     public interface IGameObject
     {
-        void Update(GameTime gameTime);
+        void Update(float delta);
         void Draw(Renderer renderer);
     }
 }

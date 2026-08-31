@@ -26,11 +26,11 @@ namespace FreedomEngine.Core
 
         public virtual void Initialize() { }
         
-        public virtual void Update(GameTime gameTime)
+        public virtual void Update(float delta)
         {
             foreach (IGameObject obj in objects)
             {
-                obj.Update(gameTime);
+                obj.Update(delta);
             }
         }
 

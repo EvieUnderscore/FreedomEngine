@@ -78,13 +78,13 @@ namespace FreedomEngine.Core
             }
         }
         // Updates the top screen. 
-        public void Update(GameTime gameTime)
+        public void Update(float delta)
         {
             try
             {
                 if (_screens.Count > 0)
                 {
-                    _screens.Peek().Update(gameTime);
+                    _screens.Peek().Update(delta);
                 }
             }
             catch (Exception ex)

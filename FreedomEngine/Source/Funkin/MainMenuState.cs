@@ -27,12 +27,12 @@ namespace FreedomEngine.Funkin
 
 
         public float et = 0;
-        public override void Update(GameTime gameTime)
+        public override void Update(float delta)
         {
-            et += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            et += delta;
             bg.transform.position.X = MathF.Sin(et/200)*10;
 
-            base.Update(gameTime);
+            base.Update(delta);
         }
 
         public override void Destroy()

@@ -14,7 +14,7 @@ namespace FreedomEngine.Core
         List<IGameObject> objects { get; set; }
 
         void Initialize();
-        void Update(GameTime gameTime);
+        void Update(float delta);
         void Draw();
         void Destroy();
         void Add(IGameObject obj);
