@@ -3,7 +3,7 @@
 using FreedomEngine.Core;
 using FreedomEngine.Graphics;
 using FreedomEngine.Objects;
-using FreedomEngine.Math;
+using System;
 
 namespace FreedomEngine.Funkin
 {
@@ -20,15 +20,18 @@ namespace FreedomEngine.Funkin
         {
             bg = new Sprite2D();
             bg.LoadTexture(assets.Image("menus/menuBG"));
-            bg.transform.position.X = 200;
             Add(bg);
 
             base.Initialize();
         }
 
 
+        public float et = 0;
         public override void Update(GameTime gameTime)
         {
+            et += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            bg.transform.position.X = MathF.Sin(et/200)*10;
+
             base.Update(gameTime);
         }
 

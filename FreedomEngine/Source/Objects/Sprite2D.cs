@@ -14,7 +14,6 @@ namespace FreedomEngine.Objects
         }
 
         public Texture2D texture;
-        public Color color = Color.White;
 
         public void LoadTexture(Texture2D texture)
         {

@@ -13,6 +13,7 @@ namespace FreedomEngine.Objects
     public class GameObject2D : IGameObject
     {
         public Transform2D transform = new Transform2D();
+        public Color color = Color.White;
 
         public GameObject2D(Transform2D transform = null)
         {
@@ -25,5 +26,20 @@ namespace FreedomEngine.Objects
         public void Update(GameTime gameTime) {}
 
         public virtual void Draw(Renderer renderer) {}
+
+        public void SetPosition(float x, float y)
+        {
+            transform.position.X = x;
+            transform.position.Y = y;
+        }
+        public void SetScale(float s_x, float s_y)
+        {
+            transform.scale.X = s_x;
+            transform.scale.Y = s_y;
+        }
+        public void SetRotation(float rotation)
+        {
+            transform.rotation = rotation;
+        }
     }
 }
