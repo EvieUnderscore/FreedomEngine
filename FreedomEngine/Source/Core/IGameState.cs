@@ -11,7 +11,6 @@ namespace FreedomEngine.Core
 {
     public interface IGameState
     {
-        List<IGameObject> objects { get; set; }
 
         void Initialize();
         void Update(float delta);

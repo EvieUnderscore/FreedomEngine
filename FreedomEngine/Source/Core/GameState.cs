@@ -13,8 +13,7 @@ namespace FreedomEngine.Core
 {
     public abstract class GameState : IGameState
     {
-        public List<IGameObject> objects { get; set; } = new List<IGameObject>();
-
+        public ObjectGroup objectGroup = new ObjectGroup();
         public Renderer renderer;
         public Assets assets;
 
@@ -28,25 +27,19 @@ namespace FreedomEngine.Core
         
         public virtual void Update(float delta)
         {
-            foreach (IGameObject obj in objects)
-            {
-                obj.Update(delta);
-            }
+            objectGroup.Update(delta);
         }
 
         public virtual void Destroy() { }
 
         public virtual void Draw()
         {
-            foreach (IGameObject obj in objects)
-            {
-                obj.Draw(renderer);
-            }
+            objectGroup.Draw(renderer);
         }
 
         public void Add(IGameObject obj)
         {
-            objects.Add(obj);
+            objectGroup.Add(obj);
         }
         //public abstract void Draw(SpriteBatch spriteBatch);
     }

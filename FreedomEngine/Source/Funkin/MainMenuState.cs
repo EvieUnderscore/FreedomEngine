@@ -10,11 +10,11 @@ namespace FreedomEngine.Funkin
     internal class MainMenuState : GameState
     {
 
-        public Sprite2D bg;
-
         public MainMenuState(Renderer renderer, Assets assets) : base(renderer, assets)
         {
         }
+
+        public Sprite2D bg;
 
         public override void Initialize()
         {
@@ -30,7 +30,6 @@ namespace FreedomEngine.Funkin
         public override void Update(float delta)
         {
             et += delta;
-            bg.transform.position.X = MathF.Sin(et/200)*10;
 
             base.Update(delta);
         }
